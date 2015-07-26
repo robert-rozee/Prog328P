@@ -8,7 +8,7 @@ Prog328P is a small utility (7k when compressed) designed to upload .hex files c
 
 For incompatible Arduino boards, use AVRDUDE shipped with the Arduino IDE.
 
-The intention in writing Prog328P was to provide a utility small enough that it can be emailed along with compiled code (.hex file) to an inexperiences user who wishes to upload or update code on an Arduino board without needing to have AVRDUDE or the Arduino IDE installed. AVRDUDE, the required configuration file, and libusb0.dll can be as large as 2mb in total - this is pushing the limits of what can sensibly (and politely) be transfered through email.
+The intention in writing Prog328P was to provide a utility small enough that it can be emailed along with compiled code (.hex file) to an inexperienced user who wishes to upload or update code on an Arduino board without needing to have AVRDUDE or the Arduino IDE installed. AVRDUDE, the required configuration file, and libusb0.dll can be as large as 2mb in total - this is pushing the limits of what can sensibly (and politely) be transferred through email.
 
 
 === Usage ====
