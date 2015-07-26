@@ -4,7 +4,7 @@ Copyright (C) 2015 Robert Rozee
 Version 1.0 27-July-2015
 *******************************************
 
-Prog328P is a small utility (7k when compressed) designed to upload the .hex files created by the Arduino IDE to an Arduino board containing an ATmega328P or similar processor. In order to keep down the size and reduce complexity, Prog328P only supports a subset of the STK500 version 1 protocol, as used by OptiBoot and similar Arduino compatible bootloaders. This limitation precludes using the utility to upload .hex files to the Arduino Mega 2560 or any Arduino that has more than 128k of flash memory. Furthermore, Prog328P only processes type 0 records from the .hex file - in theory this should not be an issue with .hex files generated for the small-memory processors (<128k flash) used on Arduino boards.
+Prog328P is a small utility (7k when compressed) designed to upload .hex files created by the Arduino IDE to an Arduino board containing an ATmega328P or similar processor. In order to keep down the size and reduce complexity, Prog328P only supports a subset of the STK500 version 1 protocol, as used by OptiBoot and similar Arduino compatible bootloaders. This limitation precludes using the utility to upload .hex files to the Arduino Mega 2560 or any Arduino that has more than 128k of flash memory. Furthermore, Prog328P only processes type 0 records from the .hex file - in theory this should not be an issue with .hex files generated for the small-memory processors (<128k flash) used on Arduino boards.
 
 For incompatible Arduino boards, use AVRDUDE shipped with the Arduino IDE.
 
