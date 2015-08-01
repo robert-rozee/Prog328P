@@ -2,7 +2,7 @@
  * Arduino/STK500 mini uploader for ATmega328P
  *
  * Copyright (C) 2015 Robert Rozee
- * Version 1.0 27-July-2015
+ * Version 1.0 30-July-2015
  *
  * This file is distributed
  * under the terms of the GNU General Public License (GPL).
@@ -46,7 +46,7 @@ int main (int argc, char **argv)
         printf ("*******************************************\n");
         printf ("Arduino/STK500 mini uploader for ATmega328P\n");
         printf ("Copyright (C) 2015 Robert Rozee\n");
-        printf ("Version 1.0 27-July-2015\n");
+        printf ("Version 1.0 30-July-2015\n");
         printf ("*******************************************\n\n");
         printf ("Usage:\n");
         printf ("       %s filename.hex port [baud]\n\n\n", argv[0]);
@@ -127,7 +127,7 @@ int main (int argc, char **argv)
     if (argc == 4) i = strtol (argv[3], NULL, 10);
         else       i = 57600;                       // default to 57600 baud if not specified
     if ((i > 0) && (i < 5)) i = bps[i];             // map 1-4 as aliases for bps[] values
-    if (i == 0) i = 57600;                          // strtoi failed, fall back to 57600
+    if (i == 0) i = 57600;                          // strtol failed, fall back to 57600
 
     if (serial_open (argv[2], i, 100) < 0) {
         printf ("Unable to configure serial port %s\n", argv[2]);
@@ -157,7 +157,7 @@ int main (int argc, char **argv)
     buffer[0] = STK_ENTER_PROGMODE;                 // enter program mode (not needed)
     buffer[1] = CRC_EOP;
     serial_write (buffer, 2);
-    serial_read (buffer, 2);
+    n = serial_read (buffer, 2);
 
     if ((n != 2) || (buffer[0] != STK_INSYNC) || (buffer[1] != STK_OK)) { 
         printf ("Failed to enter program mode\n");
